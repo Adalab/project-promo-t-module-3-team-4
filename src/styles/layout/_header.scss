@@ -1,0 +1,33 @@
+.container {
+    background-color: #302c42;
+    height: 100vh;
+    padding: 20px;
+  }
+
+
+.header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
+  &__laptopIcon {
+    width: 38px;
+    height: 31px;
+    margin: 9px 7px 26px 26px;
+    background-color: white;
+  }
+  &__text {
+    width: 139px;
+    height: 23px;
+    margin: 12px 20px 31px 0;
+    text-align: left;
+    font-size: 1.4rem;
+    color: white;
+  }
+
+  &__logo {
+    width: 123px;
+    height: 46px;
+    margin: 0 7px 20px 0;
+  }
+}
