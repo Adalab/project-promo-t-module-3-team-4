@@ -1,0 +1,124 @@
+.form {
+    background-color: $dusk;
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+    margin: auto;
+    margin-top: 34px;
+    &__title {
+        color: $white;
+        font-size: 3rem;
+        margin-top: 17px;
+    }
+    &__ask-info {
+        color: $white;
+        font-size: 1.5rem;
+        margin-top: 18px;
+        &.author {
+            margin-top: 34px;
+            font-size: 1.8rem;
+        }
+    }
+    /* section project*/
+    &__project {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        &--container {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between; 
+            gap: 5px;
+            margin: 0 25px;
+        }
+        &--input {
+            border: solid 2px $white;
+            background-color: transparent;
+            border-radius: 40px;
+            height: 32px;
+            margin: 0 25px;
+            color: $white;
+            font-size: 1rem;
+            padding-left: 17px;
+            &::placeholder {
+                color: $white;
+            }
+
+            &.repo, &.demo {
+                width: 45%;
+                margin: 0;
+            }
+        }
+        &--textarea {
+            border: solid 2px $white;
+            background-color: transparent;
+            border-radius: 20px;
+            height: 83px;
+            margin: 0 25px;
+            color: $white;
+            font-size: 1rem;
+            padding-left: 17px;
+            &::placeholder {
+                color: $white;
+            }
+        }
+    }
+    /* section author*/
+    &__author {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        width: inherit;
+        margin-bottom: 43px;
+        &--input{
+        border: solid 2px $white;
+        background-color: transparent;
+        border-radius: 40px;
+        height: 32px;
+        color: $white;
+        font-size: 1rem;
+        padding-left: 17px;
+        &::placeholder {
+            color: $white;
+            }
+        }
+    }
+    &__btn {
+        display: flex;
+        justify-content: space-between;
+        gap: 5px;
+        width: inherit;
+        &--item {
+            color: $white;
+            background-color: $dark-lilac;
+            height: 31px;
+            border: none;
+            border-radius: 40px;
+            font-size: 1rem;
+            font-weight: bold;
+            &.btn-large{
+                border: solid 2px $white;
+                width: 140px;
+                margin-top: 18px;
+                margin-bottom: 56px;
+            }
+        }
+    }
+    &__card{
+        color: $white;
+        font-size: 1.5rem;
+        margin-bottom: 56px;
+    }
+}
+
+.footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 90px;
+    &__img {
+        width: 123px;
+    }
+}
