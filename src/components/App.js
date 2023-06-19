@@ -20,7 +20,7 @@ function App() {
           <button className="description__button">ver proyectos</button>
         </section>
         <section className="preview">
-          <img className="image" src={cover} alt="image of web" />
+          <img className="preview__image" src={cover} alt="preview of web" />
 
           <section className="autor">
             <div className="info-project">
