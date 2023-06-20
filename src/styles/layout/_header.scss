@@ -1,0 +1,25 @@
+.container {
+    background-color: #302c42;
+    padding: 20px;
+  }
+.header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  height: 46px;
+  &__laptopIcon {
+    font-size: 1.5rem;
+    color: #ffffff;
+  }
+  &__text {
+    text-align: left;
+    font-size: 14px;
+    color: white;
+  }
+
+  &__logo {
+    width: 123px;
+    height: 46px;
+  }
+}
