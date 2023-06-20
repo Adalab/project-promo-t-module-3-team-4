@@ -4,50 +4,60 @@ import laptop from '../images/laptop.svg';
 import logo from '../images/logo-adalab.png';
 import user from '../images/user.jpeg';
 
-
 function App() {
   return (
     <div className="container">
       <header className="header">
-        <img className="header__laptopIcon"src={laptop} alt="laptop" />
+        <i className="fa-solid fa-laptop-code header__laptopIcon"></i>
         <p className="header__text">Proyectos Molones</p>
         <img className="header__logo" src={logo} alt="logo Adalab" />
       </header>
       <main className="main">
         <section className="description">
           <h1 className="description__title">Proyectos Molones</h1>
-          <p className="description__text">Escaparate en línea para recoger ideas a través de la tecnología.</p>
+          <p className="description__text">
+            Escaparate en línea para recoger ideas a través de la tecnología.
+          </p>
           <button className="description__button">ver proyectos</button>
         </section>
         <section className="preview">
-          <img className="preview__image" src={cover} alt="preview of web" />
+          <div className="preview__imageContainer"></div>
 
-          <section className="autor">
-            <div className="info-project">
-              <p className="subtitle">Personal Project Card</p>
+          <section className="card">
+            <div className="card__author">
+              <img
+                className="card__author--image"
+                src={user}
+                alt="user Image"
+              />
+              <p className="card__author--job">Full Stack Developer</p>
+              <p className="card__author--name">Emmelie Björklund</p>
+            </div>
+            <div className="card__infoProject">
+              <p className="card__infoProject--subtitle">
+                Personal Project Card
+              </p>
               <hr className="line" />
 
-              <h2 className="title">Elegant Workspace</h2>
-              <p className="slogan">Diseños Exclusivos</p>
-              <p className="desc">
+              <h2 className="card__infoProject--title">Elegant Workspace</h2>
+              <p className="card__infoProject--slogan">Diseños Exclusivos</p>
+              <p className="card__infoProject--desc">
                 Lorem, ipsum dolor sit amet consectetur adipisicing elit.
                 Libero, delectus? Voluptates at hic aliquam porro ad suscipit
                 harum laboriosam saepe earum doloribus aperiam, ullam culpa
                 accusantium placeat odit corrupti ipsum!
               </p>
-              <div className="technologies">
-                <p className="text">React JS, MongoDB</p>
+              <div className="card__technologies">
+                <p className="card__technologies--text">React JS, MongoDB</p>
+                <div className="card__technologies--icons">
+                  <i className="fa-solid fa-globe card__technologies--globe"></i>
+                  <i className="fa-brands fa-github card__technologies--github"></i>
+                </div>
               </div>
-            </div>
-
-            <div className="info-autor">
-              <img className="image" src={user} alt="user Image" />
-              <p className="job">Full Stack Developer</p>
-              <p className="name">Emmelie Björklund</p>
             </div>
           </section>
         </section>
-        </main>
+      </main>
     </div>
   );
 }

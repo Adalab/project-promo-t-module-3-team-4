@@ -1,29 +1,25 @@
 .container {
     background-color: #302c42;
-    height: 100vh;
     padding: 20px;
   }
 .header {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  height: 66px;
+  align-items: center;
+  height: 46px;
   &__laptopIcon {
-    width: 38px;
-    height: 31px;
+    font-size: 1.5rem;
+    color: #ffffff;
   }
   &__text {
-    width: 139px;
-    height: 23px;
     text-align: left;
     font-size: 14px;
     color: white;
-    margin: 12px;
   }
 
   &__logo {
     width: 123px;
     height: 46px;
-    margin: 0 7px 20px 0;
   }
 }
