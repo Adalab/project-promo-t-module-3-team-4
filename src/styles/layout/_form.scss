@@ -4,9 +4,10 @@
   flex-flow: column wrap;
   justify-content: center;
   align-items: center;
-  width: 80%;
+  width: 75vw;
   margin: auto;
   margin-top: 34px;
+  padding: 15px;
   font-family: $font-M;
   &__title {
     color: $white;
@@ -24,6 +25,7 @@
   }
   /* section project*/
   &__project {
+    width: 90%;
     display: flex;
     flex-direction: column;
     gap: 10px;
@@ -71,10 +73,10 @@
   }
   /* section author*/
   &__author {
+    width: 80%;
     display: flex;
     flex-direction: column;
     gap: 5px;
-    width: inherit;
     margin-bottom: 43px;
     
     &--input {
@@ -93,8 +95,8 @@
   }
   &__btn {
     display: flex;
-    justify-content: space-between;
-    gap: 5px;
+    justify-content: center;
+    gap: 25px;
     width: inherit;
     
     &--item {
@@ -110,7 +112,7 @@
         border: solid 2px $white;
         width: 140px;
         margin-top: 18px;
-        margin-bottom: 56px;
+        margin-bottom: 40px;
         
       }
     }
@@ -118,6 +120,6 @@
   &__card {
     color: $white;
     font-size: 1.5rem;
-    margin-bottom: 56px;
+    margin-bottom: 25px;
   }
 }
