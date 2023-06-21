@@ -5,10 +5,8 @@
   height: 146px;
 
   &__title {
-    width: 350px;
-    height: 24px;
     margin: 20px 0 8px 10px;
-    font-size: 20px;
+    font-size: 2rem;
     font-weight: bold;
     text-align: center;
     color: white;
@@ -16,8 +14,6 @@
   }
 
   &__text {
-    width: 246px;
-    height: 22px;
     margin: 8px 51px 18px 63px;
     font-size: 12px;
     font-weight: 300;
@@ -41,6 +37,8 @@
     font-family: $font-P;
   }
 }
+
+
 .preview {
   overflow: hidden;
   &__imageContainer {
@@ -57,7 +55,7 @@
   gap: 5px;
   margin: auto;
   margin-top: -50px;
-  padding: 20px 10px;
+  padding: 20px 15px;
   border-radius: 20px;
   background-color: #ffffff;
   &__author {
@@ -104,9 +102,12 @@
     display: flex;
     justify-content: space-between;
     font-family: $font-C;
+    font-size: 1rem;
     &--icons {
       display: flex;
       gap: 5px;
+      font-size: 1.5rem;
+      padding-right: 10px;
     }
   }
 }

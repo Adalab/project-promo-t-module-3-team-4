@@ -25,8 +25,10 @@ function App() {
   return (
     <div className="container">
       <header className="header">
+        <div className="header__title">
         <i className="fa-solid fa-laptop-code header__laptopIcon"></i>
         <p className="header__text">Proyectos Molones</p>
+        </div>
         <img className="header__logo" src={logo} alt="logo Adalab" />
       </header>
       <main className="main">
@@ -37,6 +39,7 @@ function App() {
           </p>
           <button className="description__button">ver proyectos</button>
         </section>
+        <section className='mainContainer'>
         <section className="preview">
           <div className="preview__imageContainer"></div>
 
@@ -129,6 +132,7 @@ function App() {
 
           <section className="form__ask-info author">
             <p className="subtitle">Cuéntanos sobre la autora</p>
+            <hr className="line" />
           </section>
 
           <fieldset className="form__author">
@@ -170,6 +174,7 @@ function App() {
             </a>
           </section>
         </form>
+        </section>
       </main>
       <footer className="footer">
         <img className="footer__img" src={logo} alt="Logo de Adalab" />

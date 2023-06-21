@@ -1,0 +1,106 @@
+@media screen and (min-width: 1024px) {
+  .description {
+    &__title {
+      font-size: 4rem;
+    }
+    &__text {
+      font-size: 1.8rem;
+    }
+    &__button {
+      font-size: 1.5rem;
+      width: 154px;
+      height: 29px;
+    }
+  }
+  .mainContainer {
+    display: flex;
+    gap: 25px;
+    margin: 0 17px;
+    margin-top: 21px;
+  }
+  .preview {
+    width: 50%;
+  }
+  .form {
+    width: 50%;
+    margin-top: 0;
+    &__title {
+      font-size: 4rem;
+    }
+    &__ask-info {
+      font-size: 1.8rem;
+    }
+    &__project {
+      &--input {
+        font-size: 1.4rem;
+      }
+      &--textarea {
+        font-size: 1.4rem;
+      }
+    }
+    &__author {
+      &--input {
+        font-size: 1.4rem;
+      }
+    }
+    &__btn {
+      
+      &--item {
+        font-size: 1.2rem;
+        width: 160px;
+        height: 43px;
+        &.btn-large{
+          width: 184px;
+          font-size: 1.6rem;
+        }
+      }
+
+    }
+    &__card {
+      font-size: 1.8rem;
+    }
+  }
+
+  .preview__imageContainer {
+    height: 75%;
+  }
+  .card {
+    height: 200px;
+    width: 423px;
+    &__author {
+      &--image {
+        width: 100px;
+      }
+      &--job {
+        font-size: 1.4rem;
+      }
+      &--name {
+        font-size: 1.8rem;
+      }
+    }
+    &__infoProject {
+      &--subtitle {
+        font-size: 1rem;
+        
+      }
+      &--title {
+        font-size: 2.4rem;
+        
+      }
+      &--slogan {
+        font-size: 1.6rem;
+      }
+      &--desc {
+        font-size: 1.2rem;
+      }
+    }
+    &__technologies {
+      font-size: 1.2rem;
+      &--icons {
+        font-size: 1.2rem;
+      }
+    
+  }
+  
+}
+}
