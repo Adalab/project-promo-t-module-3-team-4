@@ -1,9 +1,27 @@
 import '../styles/App.scss';
+import { useState } from 'react';
 
 import logo from '../images/logo-adalab.png';
 import user from '../images/user.jpeg';
-
+//Usar una variable objeto para todos los inputs
 function App() {
+  //const [name, setName] = useState('');
+  const [data, setData] = useState({ 
+    name: '',
+    slogan: '', 
+    repo: '',
+    demo: '',
+    technologies: '',
+    desc: '',
+    author: '',
+    job: '',
+  });
+
+  const handleInputName = (ev) => {
+    //setName(ev.target.value);
+    setData({ name: ev.target.value, slogan: data.slogan, repo: data.repo, demo: data.demo, technologies: data.technologies, desc: data.desc, author: data.author, job: data.job });
+  };
+
   return (
     <div className="container">
       <header className="header">
@@ -24,11 +42,7 @@ function App() {
 
           <section className="card">
             <div className="card__author">
-              <img
-                className="card__author--image"
-                src={user}
-                alt="user"
-              />
+              <img className="card__author--image" src={user} alt="user" />
               <p className="card__author--job">Full Stack Developer</p>
               <p className="card__author--name">Emmelie Björklund</p>
             </div>
@@ -38,8 +52,10 @@ function App() {
               </p>
               <hr className="line" />
 
-              <h2 className="card__infoProject--title">Elegant Workspace</h2>
-              <p className="card__infoProject--slogan">Diseños Exclusivos</p>
+              <h2 className="card__infoProject--title">
+                {data.name || 'Elegant Workspace'}
+              </h2>
+              <p className="card__infoProject--slogan">{data.slogan || 'Diseños Exclusivos'}</p>
               <p className="card__infoProject--desc">
                 Lorem, ipsum dolor sit amet consectetur adipisicing elit.
                 Libero, delectus? Voluptates at hic aliquam porro ad suscipit
@@ -69,6 +85,8 @@ function App() {
               placeholder="Nombre del proyecto"
               name="name"
               id="name"
+              value={data.name}
+              onInput={handleInputName}
             />
             <input
               className="form__project--input"
