@@ -97,7 +97,7 @@
     display: flex;
     justify-content: center;
     gap: 25px;
-    width: inherit;
+    width: initial;
     
     &--item {
       color: $white;
