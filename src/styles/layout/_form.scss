@@ -7,10 +7,12 @@
   width: 80%;
   margin: auto;
   margin-top: 34px;
+  font-family: $font-M;
   &__title {
     color: $white;
     font-size: 3rem;
     margin-top: 17px;
+    font-weight: bold;
   }
   &__ask-info {
     color: $white;
@@ -44,6 +46,7 @@
       padding-left: 17px;
       &::placeholder {
         color: $white;
+        font-family: $font-M;
       }
 
       &.repo,
@@ -63,6 +66,7 @@
       padding-left: 17px;
       &::placeholder {
         color: $white;
+        font-family: $font-M;
       }
     }
   }
@@ -73,6 +77,7 @@
     gap: 5px;
     width: inherit;
     margin-bottom: 43px;
+    
     &--input {
       border: solid 2px $white;
       background-color: transparent;
@@ -83,6 +88,7 @@
       padding-left: 17px;
       &::placeholder {
         color: $white;
+        font-family: $font-M;
       }
     }
   }
@@ -91,6 +97,7 @@
     justify-content: space-between;
     gap: 5px;
     width: inherit;
+    
     &--item {
       color: $white;
       background-color: $dark-lilac;
@@ -99,11 +106,13 @@
       border-radius: 40px;
       font-size: 1rem;
       font-weight: bold;
+      font-family: $font-M;
       &.btn-large {
         border: solid 2px $white;
         width: 140px;
         margin-top: 18px;
         margin-bottom: 56px;
+        
       }
     }
   }

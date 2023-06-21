@@ -12,6 +12,7 @@
     font-weight: bold;
     text-align: center;
     color: white;
+    font-family: $font-M;
   }
 
   &__text {
@@ -22,6 +23,7 @@
     font-weight: 300;
     text-align: center;
     color: white;
+    font-family: $font-M;
   }
 
   &__button {
@@ -36,6 +38,7 @@
     background-color: #8176af;
     text-transform: uppercase;
     border-radius: 20px;
+    font-family: $font-P;
   }
 }
 .preview {
@@ -62,12 +65,14 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    font-family: $font-C;
     &--image {
       width: 70.5px;
     }
     &--job {
       font-size: 1rem;
       text-align: center;
+      font-family: $font-C;
     }
     &--name {
       font-size: 1.4rem;
@@ -79,21 +84,26 @@
     &--subtitle {
       text-align: center;
       font-size: 0.8rem;
+      font-family: $font-P;
     }
     &--title {
       font-size: 1.4rem;
+      font-family: $font-P;
     }
     &--slogan {
       font-size: 1.2rem;
+      font-family: $font-P;
     }
     &--desc {
       font-size: 0.8rem;
       margin: 14px 0 18px;
+      font-family: $font-P;
     }
   }
   &__technologies {
     display: flex;
     justify-content: space-between;
+    font-family: $font-C;
     &--icons {
       display: flex;
       gap: 5px;
