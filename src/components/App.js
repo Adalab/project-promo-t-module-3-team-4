@@ -1,9 +1,12 @@
 import '../styles/App.scss';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import callToApi from '../services/api';
 
 import logo from '../images/logo-adalab.png';
 import user from '../images/user.jpeg';
 //Usar una variable objeto para todos los inputs
+
+
 function App() {
   //const [name, setName] = useState('');
   const [data, setData] = useState({
@@ -13,9 +16,13 @@ function App() {
     demo: '',
     technologies: '',
     desc: '',
-    author: '',
+    autor: '',
     job: '',
+    image: 'https://cdn.shopify.com/s/files/1/0265/0272/5680/products/punto-de-cruz-diamante-gatito-lindo_433_540x.jpg',
+    photo: 'https://cdn.shopify.com/s/files/1/0265/0272/5680/products/punto-de-cruz-diamante-gatito-lindo_433_540x.jpg',
   });
+
+  const [message, setMessage] = useState();
 
   const handleInput = (ev) => {
     //setData({ ...data, [ev.target.id]: ev.target.value });
@@ -24,6 +31,31 @@ function App() {
     setData(clonedData);
   };
 
+  
+    const handleClickCreateCard = (ev) => {
+    ev.preventDefault();
+    callToApi(data)
+    .then((data) => {
+      if (data.success) {
+      setMessage(renderMsgSuccess(data));
+      console.log(data.cardURL);
+    } else {
+      setMessage(renderMsgError(data));
+    }
+    })
+    };
+
+    const renderMsgSuccess = (data) => {
+      return <><span className='form__card--success'> La tarjeta ha sido creada: </span>
+      <a href={data.cardURL} className='' target='_blank' rel='noreferrer'>
+        {data.cardURL}
+      </a></>
+    };
+
+    const renderMsgError = () => {
+      return <span className='form__card--error'>Ha habido un error al crear la tarjeta</span>
+    };
+  
   return (
     <div className='container'>
       <header className='header'>
@@ -44,10 +76,10 @@ function App() {
             <div className='preview__imageContainer'></div>
 
             <section className='card'>
-              <div className='card__author'>
-                <img className='card__author--image' src={user} alt='user' />
-                <p className='card__author--job'>{data.job || 'Full Stack Developer'}</p>
-                <p className='card__author--name'>{data.author || 'Emmelie Björklund'}</p>
+              <div className='card__autor'>
+                <img className='card__autor--image' src={user} alt='user' />
+                <p className='card__autor--job'>{data.job || 'Full Stack Developer'}</p>
+                <p className='card__autor--name'>{data.autor || 'Emmelie Björklund'}</p>
               </div>
               <div className='card__infoProject'>
                 <p className='card__infoProject--subtitle'>Personal Project Card</p>
@@ -138,23 +170,23 @@ function App() {
               ></textarea>
             </fieldset>
 
-            <section className='form__ask-info author'>
+            <section className='form__ask-info autor'>
               <p className='subtitle'>Cuéntanos sobre la autora</p>
               <hr className='line' />
             </section>
 
-            <fieldset className='form__author'>
+            <fieldset className='form__autor'>
               <input
-                className='form__author--input'
+                className='form__autor--input'
                 type='text'
                 placeholder='Nombre'
-                name='author'
-                id='author'
-                value={data.author}
+                name='autor'
+                id='autor'
+                value={data.autor}
                 onInput={handleInput}
               />
               <input
-                className='form__author--input'
+                className='form__autor--input'
                 type='text'
                 placeholder='Trabajo'
                 name='job'
@@ -165,20 +197,17 @@ function App() {
             </fieldset>
 
             <section className='form__btn'>
-              <button className='form__btn--item'>Subir foto de proyecto</button>
-              <button className='form__btn--item'>Subir foto de autora</button>
+              <button disabled className='form__btn--item'>Subir foto de proyecto</button>
+              <button disabled className='form__btn--item'>Subir foto de autora</button>
             </section>
             <section className='form__submit'>
-              <button className='form__btn--item btn-large' /* onClick='{handleClickCreateCard}' */>
+              <button className='form__btn--item btn-large' onClick={handleClickCreateCard}>
                 Crear Tarjeta
               </button>
             </section>
 
             <section className='form__card'>
-              <span className='form__card--success'> La tarjeta ha sido creada: </span>
-              <a href='./#' className='' target='_blank' rel='noreferrer'>
-                {' '}
-              </a>
+            {message}
             </section>
           </form>
         </section>
