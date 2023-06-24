@@ -20,6 +20,10 @@
   }
   .preview {
     width: 50%;
+    &__imageContainer {
+      height: 74.5%;
+      width: auto;
+    }
   }
   .form {
     width: 50%;
@@ -53,39 +57,34 @@
       }
     }
     &__card {
-      font-size: 1.6rem;
+      font-size: 1.6rem; 
     }
   }
 
-  .preview__imageContainer {
-    height: 80%;
-  }
   .card {
     height: 155px;
     width: 300px;
+    padding: 25px 20px;
     &__autor {
       &--image {
-        width: 100px;
+        width: 80px;
       }
       &--job {
-        font-size: 1.2rem;
+        font-size: 1rem;
       }
       &--name {
-        font-size: 1.6rem;
+        font-size: 1.2rem;
       }
     }
     &__infoProject {
-      &--subtitle {
-        font-size: 0.8rem;
-      }
       &--title {
-        font-size: 2rem;
+        font-size: 1.5rem;
       }
       &--slogan {
-        font-size: 1.4rem;
+        font-size: 1.2rem;
       }
       &--desc {
-        font-size: 1rem;
+        font-size: 0.8rem;
       }
     }
     &__technologies {
