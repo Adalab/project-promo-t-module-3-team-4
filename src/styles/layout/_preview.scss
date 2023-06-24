@@ -42,8 +42,10 @@
 
 .preview {
   &__imageContainer {
-    width: 100%;
+    width: 75vw;
     height: 307px;
+    padding: 15px;
+    margin: auto;
     background-image: url('../../images/cover.jpeg');
     background-size: cover;
     background-position: center;
