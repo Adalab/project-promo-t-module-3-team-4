@@ -118,6 +118,9 @@
   }
   .preview {
     width: 50%;
+    &__imageContainer {
+      height: 70.7%;
+    }
   }
   .form {
     width: 50%;
@@ -156,10 +159,6 @@
       font-size: 1.8rem;
     }
   }
-
-  .preview__imageContainer {
-    height: 75%;
-  }
   .card {
     height: 200px;
     width: 375px;
@@ -179,13 +178,13 @@
         font-size: 1rem;
       }
       &--title {
-        font-size: 2.4rem;
+        font-size: 2rem;
       }
       &--slogan {
-        font-size: 1.6rem;
+        font-size: 1.4rem;
       }
       &--desc {
-        font-size: 1.2rem;
+        font-size: 1rem;
       }
     }
     &__technologies {
