@@ -47,7 +47,7 @@ function App() {
 
     const renderMsgSuccess = (data) => {
       return <><span className='form__card--success'> La tarjeta ha sido creada: </span>
-      <a href={data.cardURL} className='' target='_blank' rel='noreferrer'>
+      <a href={data.cardURL} className='success__link' target='_blank' rel='noreferrer'>
         {data.cardURL}
       </a></>
     };
@@ -63,7 +63,9 @@ function App() {
           <i className='fa-solid fa-laptop-code header__laptopIcon'></i>
           <p className='header__text'>Proyectos Molones</p>
         </div>
-        <img className='header__logo' src={logo} alt='logo Adalab' />
+        <div className='header__img'>
+          <img className='header__logo' src={logo} alt='logo Adalab' />
+        </div>
       </header>
       <main className='main'>
         <section className='description'>
@@ -94,10 +96,10 @@ function App() {
                 <div className='card__technologies'>
                   <p className='card__technologies--text'>{data.technologies || 'React JS, MongoDB'}</p>
                   <div className='card__technologies--icons'>
-                    <a href={data.demo} target='_blank' rel='noreferrer'>
+                    <a href={data.demo} className='icons__link' target='_blank' rel='noreferrer'>
                       <i className='fa-solid fa-globe card__technologies--globe'></i>
                     </a>
-                    <a href={data.repo} target='_blank' rel='noreferrer'>
+                    <a href={data.repo} className='icons__link' target='_blank' rel='noreferrer'>
                       <i className='fa-brands fa-github card__technologies--github'></i>
                     </a>
                   </div>
@@ -197,8 +199,12 @@ function App() {
             </fieldset>
 
             <section className='form__btn'>
-              <button disabled className='form__btn--item'>Subir foto de proyecto</button>
-              <button disabled className='form__btn--item'>Subir foto de autora</button>
+              <button disabled className='form__btn--item'>
+                Subir foto de proyecto
+              </button>
+              <button disabled className='form__btn--item'>
+                Subir foto de autora
+              </button>
             </section>
             <section className='form__submit'>
               <button className='form__btn--item btn-large' onClick={handleClickCreateCard}>
@@ -206,9 +212,7 @@ function App() {
               </button>
             </section>
 
-            <section className='form__card'>
-            {message}
-            </section>
+            <section className='form__card'>{message}</section>
           </form>
         </section>
       </main>

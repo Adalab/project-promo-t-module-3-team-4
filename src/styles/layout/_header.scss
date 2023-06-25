@@ -4,6 +4,7 @@
   }
 .header {
   display: flex;
+  gap: 20px;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
@@ -24,7 +25,8 @@
   }
 
   &__logo {
-    width: 123px;
-    height: 46px;
+    width: 100%;
+    max-width: 123px;
+    height: auto;
   }
 }
