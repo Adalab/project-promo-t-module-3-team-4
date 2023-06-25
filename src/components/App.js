@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react';
 import callToApi from '../services/api';
 
 import logo from '../images/logo-adalab.png';
-import user from '../images/user.jpeg';
+import user from '../images/user.jpg';
 //Usar una variable objeto para todos los inputs
 
 
