@@ -23,20 +23,17 @@ function App() {
     desc: '',
     autor: '',
     job: '',
-    image:
-      'https://cdn.shopify.com/s/files/1/0265/0272/5680/products/punto-de-cruz-diamante-gatito-lindo_433_540x.jpg',
-    photo:
-      'https://cdn.shopify.com/s/files/1/0265/0272/5680/products/punto-de-cruz-diamante-gatito-lindo_433_540x.jpg',
+    image:'',
+    photo: '',
   });
 
   const [message, setMessage] = useState();
 
-  const handleInput = (ev) => {
-    //setData({ ...data, [ev.target.id]: ev.target.value });
-    const clonedData = { ...data };
-    clonedData[ev.target.id] = ev.target.value;
-    setData(clonedData);
-  };
+  const handleChangeForm = ( propName, value ) => {
+    const clonedData = {...data, [propName]: value};
+    setData( clonedData );
+  }
+
 
   const handleClickCreateCard = (ev) => {
     ev.preventDefault();
@@ -90,7 +87,7 @@ function App() {
         </section>
         <section className="mainContainer">
           <Preview image={user} data={data}/>
-          <Form data={data} message={message}/>
+          <Form data={data} message={message} handleChangeForm={handleChangeForm} handleClickCreateCard={handleClickCreateCard}/>
         </section>
       </main>
       <Footer logo={logo}/>

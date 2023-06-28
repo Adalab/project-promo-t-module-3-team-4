@@ -95,13 +95,13 @@
       }
     }
   }
-  &__btn {
+
+  &__btn{
     display: flex;
     justify-content: center;
     gap: 25px;
     width: initial;
-
-    &--item {
+    &-large {
       color: $white;
       background-color: $dark-lilac;
       height: 31px;
@@ -110,15 +110,14 @@
       font-size: 1rem;
       font-weight: bold;
       font-family: $font-M;
-      &.btn-large {
-        border: solid 2px $white;
-        width: 140px;
-        margin-top: 18px;
-        margin-bottom: 40px;
-        cursor: pointer;
-      }
+      border: solid 2px $white;
+      width: 140px;
+      margin-top: 18px;
+      margin-bottom: 40px;
+      cursor: pointer;
     }
   }
+  
   &__card {
     color: $white;
     font-size: 1.5rem;

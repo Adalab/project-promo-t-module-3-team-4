@@ -1,6 +1,22 @@
 import '../styles/layout/Form.scss';
+import GetAvatar from './GetAvatar';
 
 const Form = (props) => {
+
+  const handleInput = (ev) => {
+    //setData({ ...data, [ev.target.id]: ev.target.value });
+    props.handleChangeForm(ev.target.id, ev.target.value);
+    
+  };
+  
+  const handleImage = (fichero) => {
+    props.handleChangeForm ('image', fichero);
+  }
+
+  const handlePhoto = (fichero) => {
+    props.handleChangeForm('photo', fichero);
+  }
+
   return (
     <form className="form">
       <h2 className="form__title">Información</h2>
@@ -16,7 +32,7 @@ const Form = (props) => {
           name="name"
           id="name"
           value={props.data.name}
-          //onInput={handleInput}
+          onInput={handleInput}
         />
         <input
           className="form__project--input"
@@ -25,7 +41,7 @@ const Form = (props) => {
           id="slogan"
           placeholder="Slogan"
           value={props.data.slogan}
-          //onInput={handleInput}
+          onInput={handleInput}
         />
         <section className="form__project--container">
           <input
@@ -35,7 +51,7 @@ const Form = (props) => {
             id="repo"
             placeholder="Repo"
             value={props.data.repo}
-            //onInput={handleInput}
+            onInput={handleInput}
           />
           <input
             className="form__project--input demo"
@@ -44,7 +60,7 @@ const Form = (props) => {
             name="demo"
             id="demo"
             value={props.data.demo}
-            //onInput={handleInput}
+            onInput={handleInput}
           />
         </section>
         <input
@@ -54,7 +70,7 @@ const Form = (props) => {
           name="technologies"
           id="technologies"
           value={props.data.technologies}
-          //onInput={handleInput}
+          onInput={handleInput}
         />
         <textarea
           className="form__project--textarea"
@@ -63,7 +79,7 @@ const Form = (props) => {
           name="desc"
           id="desc"
           value={props.data.desc}
-          //onInput={handleInput}
+          onInput={handleInput}
         ></textarea>
       </fieldset>
 
@@ -80,7 +96,7 @@ const Form = (props) => {
           name="autor"
           id="autor"
           value={props.data.autor}
-          //onInput={handleInput}
+          onInput={handleInput}
         />
         <input
           className="form__autor--input"
@@ -89,22 +105,23 @@ const Form = (props) => {
           name="job"
           id="job"
           value={props.data.job}
-          //onInput={handleInput}
+          onInput={handleInput}
         />
       </fieldset>
 
       <section className="form__btn">
-        <button disabled className="form__btn--item">
-          Subir foto de proyecto
-        </button>
-        <button disabled className="form__btn--item">
-          Subir foto de autora
-        </button>
+        <GetAvatar text="Subir foto de proyecto"
+        avatar={props.data.image}
+        updateAvatar={handleImage}
+        />
+        <GetAvatar text="Subir foto de autora"
+        avatar={props.data.photo}
+        updateAvatar={handlePhoto}/>
       </section>
       <section className="form__submit">
         <button
-          className="form__btn--item btn-large"
-          //onClick={handleClickCreateCard}
+          className="form__btn-large"
+          onClick={props.handleClickCreateCard}
         >
           Crear Tarjeta
         </button>

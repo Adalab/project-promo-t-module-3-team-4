@@ -1,13 +1,15 @@
 import '../styles/layout/Preview.scss';
+import image from'../images/cover.jpeg';
+import user from '../images/user.jpg';
 
 const Preview = (props) => {
   return (
     <section className="preview">
-      <div className="preview__imageContainer"></div>
+      <div className="preview__imageContainer" style={{ backgroundImage: `url(${ props.data.image || image})` }}></div>
 
       <section className="card">
         <div className="card__autor">
-          <img className="card__autor--image" src={props.image} alt="user" />
+          <img className="card__autor--image" src={props.data.photo || user} alt="user" />
           <p className="card__autor--job">
             {props.data.job || 'Full Stack Developer'}
           </p>
