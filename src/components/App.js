@@ -6,47 +6,49 @@ import Form from './Form';
 import Footer from './Footer';
 import logo from '../images/logo-adalab.png';
 import user from '../images/user.jpg';
-
+import ls from '../services/localStorage';
 
 //Usar una variable objeto para todos los inputs
 
 function App() {
   //const [name, setName] = useState('');
-  const [data, setData] = useState({
-    name: '',
-    slogan: '',
-    repo: '',
-    demo: '',
-    technologies: '',
-    desc: '',
-    autor: '',
-    job: '',
-    image:'',
-    photo: '',
-  });
+  const [data, setData] = useState(
+    ls.get('data', {
+      name: '',
+      slogan: '',
+      repo: '',
+      demo: '',
+      technologies: '',
+      desc: '',
+      autor: '',
+      job: '',
+      image: '',
+      photo: '',
+    })
+  );
 
-  const handleChangeForm = ( propName, value ) => {
-    const clonedData = {...data, [propName]: value};
-    setData( clonedData );
-  }
+  const handleChangeForm = (propName, value) => {
+    const clonedData = { ...data, [propName]: value };
+    setData(clonedData);
+  };
 
   return (
-    <div className="container">
-      <Header logo={logo}/>
-      <main className="main">
-        <section className="description">
-          <h1 className="description__title">Proyectos Molones</h1>
-          <p className="description__text">
+    <div className='container'>
+      <Header logo={logo} />
+      <main className='main'>
+        <section className='description'>
+          <h1 className='description__title'>Proyectos Molones</h1>
+          <p className='description__text'>
             Escaparate en línea para recoger ideas a través de la tecnología.
           </p>
-          <button className="description__button">ver proyectos</button>
+          <button className='description__button'>ver proyectos</button>
         </section>
-        <section className="mainContainer">
-          <Preview image={user} data={data}/>
-          <Form data={data} handleChangeForm={handleChangeForm}/>
+        <section className='mainContainer'>
+          <Preview image={user} data={data} />
+          <Form data={data} handleChangeForm={handleChangeForm} />
         </section>
       </main>
-      <Footer logo={logo}/>
+      <Footer logo={logo} />
     </div>
   );
 }
