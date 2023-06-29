@@ -96,28 +96,15 @@
     }
   }
 
-  &__btn{
+  &__btn {
     display: flex;
     justify-content: center;
     gap: 25px;
     width: initial;
-    &-large {
-      color: $white;
-      background-color: $dark-lilac;
-      height: 31px;
-      border: none;
-      border-radius: 40px;
-      font-size: 1rem;
-      font-weight: bold;
-      font-family: $font-M;
-      border: solid 2px $white;
-      width: 140px;
-      margin-top: 18px;
-      margin-bottom: 40px;
-      cursor: pointer;
-    }
+    margin-top: 20px;
+    gap: 10px;
   }
-  
+
   &__card {
     color: $white;
     font-size: 1.5rem;
@@ -125,6 +112,38 @@
     &--success {
       display: block;
       text-align: center;
+    }
+  }
+
+  &__submit {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    width: initial;
+    gap: 10px;
+    &-reset {
+      color: rgb(255, 195, 83);
+      background-color: $dark-lilac;
+      height: 31px;
+      border-radius: 40px;
+      font-size: 1rem;
+      font-weight: bold;
+      font-family: $font-M;
+      border: solid 2px orange;
+      width: 140px;
+      cursor: pointer;
+    }
+    &-large {
+      color: $white;
+      background-color: $dark-lilac;
+      height: 31px;
+      border-radius: 40px;
+      font-size: 1rem;
+      font-weight: bold;
+      font-family: $font-M;
+      border: solid 2px $white;
+      width: 140px;
+      cursor: pointer;
     }
   }
 }
@@ -160,17 +179,19 @@
       }
     }
     &__btn {
-      &--item {
-        font-size: 1rem;
-        &.btn-large {
-          width: 184px;
-          font-size: 1.6rem;
-        }
+      font-size: 1.8rem;
+    }
+    &__submit {
+      &-large {
+        font-size: 1.2rem;
+      }
+      &-reset {
+        font-size: 1.2rem;
       }
     }
-    &__card {
-      font-size: 1.6rem;
-    }
+  }
+  &__card {
+    font-size: 1.6rem;
   }
 }
 
@@ -202,14 +223,18 @@
         font-size: 1.2rem;
         width: 160px;
         height: 43px;
-        &.btn-large {
-          width: 184px;
-          font-size: 1.6rem;
-        }
       }
     }
     &__card {
       font-size: 1.8rem;
+    }
+    &__submit {
+      &-large {
+        font-size: 1.2rem;
+      }
+      &-reset {
+        font-size: 1.2rem;
+      }
     }
   }
 }

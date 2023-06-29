@@ -27,6 +27,21 @@ function App() {
     })
   );
 
+  const clearData = () => {
+    setData({
+      name: '',
+      slogan: '',
+      repo: '',
+      demo: '',
+      technologies: '',
+      desc: '',
+      autor: '',
+      job: '',
+      image: '',
+      photo: '',
+    })
+  }
+
   const handleChangeForm = (propName, value) => {
     const clonedData = { ...data, [propName]: value };
     setData(clonedData);
@@ -45,7 +60,7 @@ function App() {
         </section>
         <section className='mainContainer'>
           <Preview image={user} data={data} />
-          <Form data={data} handleChangeForm={handleChangeForm} />
+          <Form data={data} handleChangeForm={handleChangeForm} clearData={clearData}/>
         </section>
       </main>
       <Footer logo={logo} />

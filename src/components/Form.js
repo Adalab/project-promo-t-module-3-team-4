@@ -77,6 +77,13 @@ const Form = (props) => {
     });
   }, [props.data]);
 
+  const handleClearForm = (ev) => {
+    ev.preventDefault();
+    ls.clear();
+    console.log(props.data);
+    props.clearData();
+  };
+
   return (
     <form className='form'>
       <h2 className='form__title'>Información</h2>
@@ -142,6 +149,18 @@ const Form = (props) => {
           onInput={handleInput}
         ></textarea>
       </fieldset>
+      <section className='form__btn'>
+        <GetAvatar
+          text='Subir foto de proyecto'
+          avatar={props.data.photo}
+          updateAvatar={handlePhoto}
+        />
+        <GetAvatar
+          text='Subir foto de autora'
+          avatar={props.data.image}
+          updateAvatar={handleImage}
+        />
+      </section>
 
       <section className='form__ask-info autor'>
         <p className='subtitle'>Cuéntanos sobre la autora</p>
@@ -168,21 +187,11 @@ const Form = (props) => {
           onInput={handleInput}
         />
       </fieldset>
-
-      <section className='form__btn'>
-        <GetAvatar
-          text='Subir foto de proyecto'
-          avatar={props.data.photo}
-          updateAvatar={handlePhoto}
-        />
-        <GetAvatar
-          text='Subir foto de autora'
-          avatar={props.data.image}
-          updateAvatar={handleImage}
-        />
-      </section>
       <section className='form__submit'>
-        <button className='form__btn-large' onClick={handleClickCreateCard}>
+        <button className='form__submit-reset' onClick={handleClearForm}>
+          Borrar todo
+        </button>
+        <button className='form__submit-large' onClick={handleClickCreateCard}>
           Crear Tarjeta
         </button>
       </section>

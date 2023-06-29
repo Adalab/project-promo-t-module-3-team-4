@@ -16,5 +16,7 @@
   font-weight: bold;
   font-family: $font-M;
   padding: 0 8px;
-  
-};
+  @media screen and (min-width: 768px) {
+    font-size: 1.1rem;
+  }
+}
