@@ -5,11 +5,11 @@ import user from '../images/user.jpg';
 const Preview = (props) => {
   return (
     <section className="preview">
-      <div className="preview__imageContainer" style={{ backgroundImage: `url(${ props.data.image || image})` }}></div>
+      <div className="preview__imageContainer" style={{ backgroundImage: `url(${ props.data.photo || image})` }}></div>
 
       <section className="card">
         <div className="card__autor">
-          <img className="card__autor--image" src={props.data.photo || user} alt="user" />
+          <img className="card__autor--image" src={props.data.image || user} alt="user" />
           <p className="card__autor--job">
             {props.data.job || 'Full Stack Developer'}
           </p>

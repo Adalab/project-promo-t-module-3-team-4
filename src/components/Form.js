@@ -1,12 +1,14 @@
 import '../styles/layout/Form.scss';
+import { useState } from 'react';
 import GetAvatar from './GetAvatar';
+import callToApi from '../services/api';
 
 const Form = (props) => {
+  const [message, setMessage] = useState();
 
   const handleInput = (ev) => {
     //setData({ ...data, [ev.target.id]: ev.target.value });
     props.handleChangeForm(ev.target.id, ev.target.value);
-    
   };
   
   const handleImage = (fichero) => {
@@ -16,6 +18,35 @@ const Form = (props) => {
   const handlePhoto = (fichero) => {
     props.handleChangeForm('photo', fichero);
   }
+
+  const renderMsgSuccess = (dataAPI) => {
+    return (
+      <>
+        <span className='form__card--success'> La tarjeta ha sido creada: </span>
+        <a href={dataAPI.cardURL} className='success__link' target='_blank' rel='noreferrer'>
+          {dataAPI.cardURL}
+        </a>
+      </>
+    );
+  };
+
+  const renderMsgError = () => {
+    return <span className='form__card--error'>Ha habido un error al crear la tarjeta. Compruebe que todos los campos están rellenos</span>;
+  };
+
+  const handleClickCreateCard = (ev) => {
+    ev.preventDefault();
+    console.log(props.data);
+    callToApi(props.data).then((dataAPI) => {
+      console.log(dataAPI);
+      if (dataAPI.success) {
+        setMessage(renderMsgSuccess(dataAPI));
+        console.log(dataAPI.cardURL);
+      } else {
+        setMessage(renderMsgError(dataAPI));
+      }
+    });
+  };
 
   return (
     <form className="form">
@@ -111,23 +142,23 @@ const Form = (props) => {
 
       <section className="form__btn">
         <GetAvatar text="Subir foto de proyecto"
-        avatar={props.data.image}
-        updateAvatar={handleImage}
+        avatar={props.data.photo}
+        updateAvatar={handlePhoto}
         />
         <GetAvatar text="Subir foto de autora"
-        avatar={props.data.photo}
-        updateAvatar={handlePhoto}/>
+        avatar={props.data.image}
+        updateAvatar={handleImage}/>
       </section>
       <section className="form__submit">
         <button
           className="form__btn-large"
-          onClick={props.handleClickCreateCard}
+          onClick={handleClickCreateCard}
         >
           Crear Tarjeta
         </button>
       </section>
 
-      <section className="form__card">{props.message}</section>
+      <section className="form__card">{message}</section>
     </form>
   );
 };
