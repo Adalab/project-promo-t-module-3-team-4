@@ -148,19 +148,11 @@ const Form = (props) => {
           value={props.data.desc}
           onInput={handleInput}
         ></textarea>
+        {/* <section className='form__btn'> */}
+        <GetAvatar text='Subir foto de proyecto' avatar={props.data.photo} updateAvatar={handlePhoto} />
+      {/* </section> */}
       </fieldset>
-      <section className='form__btn'>
-        <GetAvatar
-          text='Subir foto de proyecto'
-          avatar={props.data.photo}
-          updateAvatar={handlePhoto}
-        />
-        <GetAvatar
-          text='Subir foto de autora'
-          avatar={props.data.image}
-          updateAvatar={handleImage}
-        />
-      </section>
+      
 
       <section className='form__ask-info autor'>
         <p className='subtitle'>Cuéntanos sobre la autora</p>
@@ -186,6 +178,7 @@ const Form = (props) => {
           value={props.data.job}
           onInput={handleInput}
         />
+        <GetAvatar text='Subir foto de autora' avatar={props.data.image} updateAvatar={handleImage} />
       </fieldset>
       <section className='form__submit'>
         <button className='form__submit-reset' onClick={handleClearForm}>
