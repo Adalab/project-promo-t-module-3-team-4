@@ -7,8 +7,8 @@ const callToApi = (data) => {
     body: JSON.stringify(data),
   })
     .then((response) => response.json())
-    .then((data) => {
-      return data;
+    .then((dataAPI) => {
+      return dataAPI;
     });
 };
 

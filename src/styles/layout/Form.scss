@@ -1,0 +1,249 @@
+@import '../core/var';
+
+.form {
+  background-color: $dusk;
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  align-items: center;
+  width: 75vw;
+  margin: auto;
+  margin-top: 34px;
+  padding: 15px;
+  font-family: $font-M;
+  &__title {
+    color: $white;
+    font-size: 3rem;
+    margin-top: 17px;
+    font-weight: bold;
+  }
+  &__ask-info {
+    color: $white;
+    font-size: 1.5rem;
+    margin-top: 18px;
+    &.autor {
+      margin-top: 34px;
+    }
+  }
+  /* section project*/
+  &__project {
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    &--container {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      gap: 5px;
+
+    }
+    &--input {
+      border: solid 2px $white;
+      background-color: transparent;
+      border-radius: 40px;
+      height: 32px;
+
+      color: $white;
+      font-size: 1rem;
+      padding-left: 17px;
+      &::placeholder {
+        color: $white;
+        font-family: $font-M;
+      }
+
+      &.repo,
+      &.demo {
+        width: 45%;
+        margin: 0;
+      }
+    }
+    &--textarea {
+      border: solid 2px $white;
+      background-color: transparent;
+      border-radius: 20px;
+      height: 83px;
+
+      color: $white;
+      font-size: 1rem;
+      padding-left: 17px;
+      &::placeholder {
+        color: $white;
+        font-family: $font-M;
+      }
+    }
+  }
+  /* section autor*/
+  &__autor {
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    margin-bottom: 43px;
+
+    &--input {
+      border: solid 2px $white;
+      background-color: transparent;
+      border-radius: 40px;
+      height: 32px;
+      color: $white;
+      font-size: 1rem;
+      padding-left: 17px;
+      &::placeholder {
+        color: $white;
+        font-family: $font-M;
+      }
+    }
+  }
+
+  &__btn {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    width: initial;
+    margin-top: 20px;
+    gap: 10px;
+  }
+
+  &__card {
+    color: $white;
+    font-size: 1.5rem;
+    margin-bottom: 25px;
+    &--success {
+      display: block;
+      text-align: center;
+      padding-top: 15px;
+    }
+    &--error {
+      display: block;
+      padding-top: 15px;
+      margin-top: 15px;
+      text-align: center;
+    }
+  }
+
+  &__submit {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 25px;
+    width: initial;
+    gap: 10px;
+    &-reset {
+      color: rgb(255, 195, 83);
+      background-color: $dark-lilac;
+      height: 31px;
+      border-radius: 40px;
+      font-size: 1rem;
+      font-weight: bold;
+      font-family: $font-M;
+      border: solid 2px orange;
+      width: 140px;
+      cursor: pointer;
+    }
+    &-large {
+      color: $white;
+      background-color: $dark-lilac;
+      height: 31px;
+      border-radius: 40px;
+      font-size: 1rem;
+      font-weight: bold;
+      font-family: $font-M;
+      border: solid 2px $white;
+      width: 140px;
+      cursor: pointer;
+    }
+  }
+}
+
+.success__link {
+  font-size: smaller;
+  color: orange;
+  &:hover {
+    color: $white;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .form {
+    width: 50%;
+    margin-top: 0;
+    &__title {
+      font-size: 3rem;
+    }
+    &__ask-info {
+      font-size: 1.6rem;
+    }
+    &__project {
+      &--input {
+        font-size: 1.2rem;
+      }
+      &--textarea {
+        font-size: 1.2rem;
+      }
+    }
+    &__autor {
+      &--input {
+        font-size: 1.2rem;
+      }
+    }
+    &__btn {
+      font-size: 1.8rem;
+    }
+    &__submit {
+      &-large {
+        font-size: 1.2rem;
+      }
+      &-reset {
+        font-size: 1.2rem;
+      }
+    }
+  }
+  &__card {
+    font-size: 1.6rem;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .form {
+    width: 50%;
+    margin-top: 0;
+    &__title {
+      font-size: 4rem;
+    }
+    &__ask-info {
+      font-size: 1.8rem;
+    }
+    &__project {
+      &--input {
+        font-size: 1.4rem;
+      }
+      &--textarea {
+        font-size: 1.4rem;
+      }
+    }
+    &__autor {
+      &--input {
+        font-size: 1.4rem;
+      }
+    }
+    &__btn {
+      &--item {
+        font-size: 1.2rem;
+        width: 160px;
+        height: 43px;
+      }
+    }
+    &__card {
+      font-size: 1.8rem;
+    }
+    &__submit {
+      &-large {
+        font-size: 1.2rem;
+      }
+      &-reset {
+        font-size: 1.2rem;
+      }
+    }
+  }
+}
