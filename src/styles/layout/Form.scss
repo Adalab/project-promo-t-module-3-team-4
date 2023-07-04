@@ -115,13 +115,17 @@
       padding-top: 15px;
     }
     &--error {
+      display: block;
       padding-top: 15px;
+      margin-top: 15px;
+      text-align: center;
     }
   }
 
   &__submit {
     display: flex;
     justify-content: center;
+    flex-wrap: wrap;
     gap: 25px;
     width: initial;
     gap: 10px;
@@ -153,6 +157,7 @@
 }
 
 .success__link {
+  font-size: smaller;
   color: orange;
   &:hover {
     color: $white;

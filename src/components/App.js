@@ -11,7 +11,6 @@ import ls from '../services/localStorage';
 //Usar una variable objeto para todos los inputs
 
 function App() {
-  //const [name, setName] = useState('');
   const [data, setData] = useState(
     ls.get('data', {
       name: '',
@@ -39,8 +38,8 @@ function App() {
       job: '',
       image: '',
       photo: '',
-    })
-  }
+    });
+  };
 
   const handleChangeForm = (propName, value) => {
     const clonedData = { ...data, [propName]: value };
@@ -53,14 +52,12 @@ function App() {
       <main className='main'>
         <section className='description'>
           <h1 className='description__title'>Proyectos Molones</h1>
-          <p className='description__text'>
-            Escaparate en línea para recoger ideas a través de la tecnología.
-          </p>
+          <p className='description__text'>Escaparate en línea para recoger ideas a través de la tecnología.</p>
           <button className='description__button'>ver proyectos</button>
         </section>
         <section className='mainContainer'>
           <Preview image={user} data={data} />
-          <Form data={data} handleChangeForm={handleChangeForm} clearData={clearData}/>
+          <Form data={data} handleChangeForm={handleChangeForm} clearData={clearData} />
         </section>
       </main>
       <Footer logo={logo} />

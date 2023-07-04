@@ -8,7 +8,6 @@ const Form = (props) => {
   const [message, setMessage] = useState();
 
   const handleInput = (ev) => {
-    //setData({ ...data, [ev.target.id]: ev.target.value });
     props.handleChangeForm(ev.target.id, ev.target.value);
   };
 
@@ -23,16 +22,8 @@ const Form = (props) => {
   const renderMsgSuccess = (dataAPI) => {
     return (
       <>
-        <span className='form__card--success'>
-          {' '}
-          La tarjeta ha sido creada:{' '}
-        </span>
-        <a
-          href={dataAPI.cardURL}
-          className='success__link'
-          target='_blank'
-          rel='noreferrer'
-        >
+        <span className='form__card--success'> La tarjeta ha sido creada: </span>
+        <a href={dataAPI.cardURL} className='success__link' target='_blank' rel='noreferrer'>
           {dataAPI.cardURL}
         </a>
       </>
@@ -42,20 +33,16 @@ const Form = (props) => {
   const renderMsgError = () => {
     return (
       <span className='form__card--error'>
-        Ha habido un error al crear la tarjeta. Compruebe que todos los campos
-        están rellenos
+        Ha habido un error al crear la tarjeta. Compruebe que todos los campos están rellenos
       </span>
     );
   };
 
   const handleClickCreateCard = (ev) => {
     ev.preventDefault();
-    console.log(props.data);
     callToApi(props.data).then((dataAPI) => {
-      console.log(dataAPI);
       if (dataAPI.success) {
         setMessage(renderMsgSuccess(dataAPI));
-        console.log(dataAPI.cardURL);
       } else {
         setMessage(renderMsgError(dataAPI));
       }
@@ -80,7 +67,6 @@ const Form = (props) => {
   const handleClearForm = (ev) => {
     ev.preventDefault();
     ls.clear();
-    console.log(props.data);
     props.clearData();
   };
 
@@ -148,12 +134,8 @@ const Form = (props) => {
           value={props.data.desc}
           onInput={handleInput}
         ></textarea>
-        {/* <section className='form__btn'> */}
         <GetAvatar text='Subir foto de proyecto' avatar={props.data.photo} updateAvatar={handlePhoto} />
-      {/* </section> */}
       </fieldset>
-      
-
       <section className='form__ask-info autor'>
         <p className='subtitle'>Cuéntanos sobre la autora</p>
         <hr className='line' />

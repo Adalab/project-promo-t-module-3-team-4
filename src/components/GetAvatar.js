@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import defaultAvatar from '../images/user.jpg';
 import '../styles/layout/GetAvatar.scss';
 
-function GetAvatar({avatar=defaultAvatar, updateAvatar, text='Get avatar!'}) {
+function GetAvatar({ avatar = defaultAvatar, updateAvatar, text = 'Get avatar!' }) {
   // creamos una propiedad de la clase que es la que vamos a usar en varios métodos para cargar la imagen
   // esto es un manejador de ficheros
   const fr = new FileReader();
@@ -24,10 +24,7 @@ function GetAvatar({avatar=defaultAvatar, updateAvatar, text='Get avatar!'}) {
     // para este ejercicio nos interesa solo el primero de los ficheros elegidos por la usuaria, por eso ponemos [0]
     // este primer fichero es un objeto con información útil del fichero como: nombre, última modificación, tamaño del fichero...
     // este objeto no tiene información privada del ordenador de la usuaria, por ejemplo no tenemos información de la carpeta en la que está la imagen
-    console.log(
-      'El primero de los ficheros elegidos es',
-      ev.currentTarget.files[0]
-    );
+    console.log('El primero de los ficheros elegidos es', ev.currentTarget.files[0]);
 
     // compruebo si la usuaria ha elegido al menos un fichero
     if (ev.currentTarget.files.length > 0) {
@@ -59,23 +56,17 @@ function GetAvatar({avatar=defaultAvatar, updateAvatar, text='Get avatar!'}) {
   };
 
   return (
-    
-      <label className="get-avatar__label">
-        {text}
-        <input
-          type="file"
-          ref={myFileField}
-          style={{ display: 'none' }}
-          onChange={uploadImage}
-        />
-      </label>
+    <label className='get-avatar__label'>
+      {text}
+      <input type='file' ref={myFileField} style={{ display: 'none' }} onChange={uploadImage} />
+    </label>
   );
 }
 
 GetAvatar.propTypes = {
   avatar: PropTypes.string,
   updateAvatar: PropTypes.func.isRequired,
-  text: PropTypes.string
+  text: PropTypes.string,
 };
 
 export default GetAvatar;
